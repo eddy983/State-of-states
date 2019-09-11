@@ -214,7 +214,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 4.5% 0 0;
+    margin: 4% 0 0;
 
     @include respond(tab-land2) {
       margin: 20% 0 0;
@@ -345,20 +345,25 @@ body {
   }
 
   &__index {
-    width: 24%;
+    width: 0;
     height: 100%;
     background: #fff;
     position: absolute;
     box-shadow: 2px 0px 6px rgba(0, 0, 0, 0.22);
     overflow-y: scroll;
-    transform: translateX(-100%);
     top: 0;
     left: 0;
+    z-index: 1;
+    transition: all 0.4s ease-out;
 
     &__content {
       height: 100%;
       padding: 18% 8%;
       position: relative;
+
+      @include respond(tab-port3) {
+        padding: 36% 8%;
+      }
     }
 
     &__header {
@@ -370,6 +375,10 @@ body {
       color: #000000;
       font-weight: normal;
       margin-bottom: 14%;
+
+      @include respond(tab-port3) {
+        font-size: 2rem;
+      }
     }
 
     &__table--heading {
@@ -385,7 +394,7 @@ body {
   }
 
   &__state {
-    width: 24%;
+    width: 0;
     height: 100%;
     background: #fff;
     position: absolute;
@@ -393,7 +402,12 @@ body {
     overflow-y: scroll;
     top: 0;
     right: 0;
-    transform: translateX(100%);
+    z-index: 1;
+    transition: all 0.4s ease-out;
+
+    @include respond(l-phone) {
+      width: 100%;
+    }
 
     &__content {
       height: 100%;
@@ -403,6 +417,17 @@ body {
     &__header {
       padding: 0 8%;
       margin: 20% 0 12% 0;
+
+      @include respond(tab-port3) {
+        margin: 36% 8% 14% 8%;
+      }
+
+      @include respond(l-phone) {
+        margin: 0;
+        padding: 2rem 0;
+        background: #1c4e63;
+        color: #fff;
+      }
     }
 
     &__heading {
@@ -412,6 +437,16 @@ body {
       font-weight: normal;
       font-size: 2.8rem;
       letter-spacing: 0.04em;
+
+      @include respond(tab-port3) {
+        font-size: 2rem;
+      }
+
+      @include respond(l-phone) {
+        border-bottom: none;
+        border-top: none;
+        font-size: 3.6rem;
+      }
     }
 
     &__states {
@@ -432,11 +467,21 @@ body {
         background: #1c4e63;
         color: #fff;
       }
+
+      @include respond(l-phone) {
+        text-align: center;
+        padding: 1.6rem 0;
+        font-size: 3rem;
+        font-weight: 400;
+        border-bottom: 0.25px solid #08161c;
+      }
     }
   }
 }
 
 .btn {
+  outline: 0;
+
   &__map {
     font-size: 1.4rem;
     letter-spacing: 0.04em;
@@ -448,14 +493,30 @@ body {
     border: 1px solid $color-green;
     background: $color-white;
 
+    @include respond(tab-port3) {
+      line-height: 1.7;
+    }
+
     &--1 {
       width: 19%;
       border-radius: 0 8px 8px 0;
+
+      @include respond(tab-land2) {
+        width: 24%;
+      }
+
+      @include respond(tab-port3) {
+        width: 19%;
+      }
     }
 
     &--2 {
       width: 12%;
       border-radius: 8px 0 0 8px;
+
+      @include respond(tab-land2) {
+        width: 15%;
+      }
     }
   }
 
@@ -468,6 +529,10 @@ body {
     padding: 0.1rem 0.8rem;
     position: absolute;
     top: 0;
+
+    @include respond(l-phone) {
+      display: none;
+    }
   }
 }
 
@@ -596,12 +661,20 @@ td {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   background-color: rgba(242, 242, 242, 0.2);
+
+  @include respond(l-phone) {
+    display: none;
+  }
 }
 
 .scroller::-webkit-scrollbar {
   width: 6px;
   background-color: transparent;
   cursor: pointer;
+
+  @include respond(l-phone) {
+    display: none;
+  }
 }
 
 .scroller::-webkit-scrollbar-thumb {
@@ -609,6 +682,10 @@ td {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: rgba(242, 242, 242, 0.5);
   cursor: pointer;
+
+  @include respond(l-phone) {
+    display: none;
+  }
 }
 
 .tooltip {
@@ -666,7 +743,15 @@ td {
 // }
 
 .green {
-  color: #00FAC9;
+  color: #00fac9;
+}
+
+.width {
+  width: 24%;
+}
+
+.no-width {
+  width: 0;
 }
 
 // Animations
@@ -689,31 +774,5 @@ td {
 
   60% {
     transform: translateY(-35px);
-  }
-}
-
-.slide-right {
-  animation: slide-right 1s forwards;
-}
-
-.slide-left {
-  animation: slide-left 1s forwards;
-}
-
-@keyframes slide-right {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-left {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
   }
 }
