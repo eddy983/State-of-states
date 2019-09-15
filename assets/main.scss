@@ -500,7 +500,7 @@ body {
     &--1 {
       width: 19%;
       border-radius: 0 8px 8px 0;
-      transition: all .2s;
+      transition: all 0.2s;
 
       &:hover {
         transform: scaleX(1.03) translateX(1.5%);
@@ -519,7 +519,7 @@ body {
     &--2 {
       width: 12%;
       border-radius: 8px 0 0 8px;
-      transition: all .2s;
+      transition: all 0.2s;
 
       &:hover {
         transform: scaleX(1.03) translateX(-1.5%);
@@ -746,12 +746,7 @@ td {
   border-color: black transparent transparent transparent;
 }
 
-#rivers,
-#delta,
-#bayelsa,
-#lagos,
-#edo,
-#kano {
+.highest {
   &:hover {
     fill: #65b6a6;
     stroke: #458c7e;
@@ -759,21 +754,7 @@ td {
   }
 }
 
-.akwa-ibom {
-  &:hover {
-    fill: #65b6a6;
-    stroke: #458c7e;
-    stroke-width: 1px;
-  }
-}
-
-#ogun,
-#ondo,
-#enugu,
-#anambra,
-#abia,
-#katsina,
-#kaduna {
+.high {
   &:hover {
     fill: #c8e9e3;
     stroke: #369494;
@@ -781,14 +762,7 @@ td {
   }
 }
 
-#imo,
-#kebbi,
-#niger,
-#ebonyi,
-#zamfara,
-#kwara,
-#kogi,
-#yobe {
+.average {
   &:hover {
     fill: #eee7b0;
     stroke: #938620;
@@ -796,13 +770,7 @@ td {
   }
 }
 
-#sokoto,
-#taraba,
-#gombe,
-#benue,
-#nasarawa,
-#borno,
-#jigawa {
+.low {
   &:hover {
     fill: #edcaa6;
     stroke: #d07e2a;
@@ -810,34 +778,13 @@ td {
   }
 }
 
-#oyo,
-#plateau,
-#bauchi,
-#adamawa,
-#ekiti,
-#osun {
+.lowest {
   &:hover {
     fill: #cb7676;
     stroke: #df2020;
     stroke-width: 1px;
   }
 }
-
-.cross-river {
-  &:hover {
-    fill: #cb7676;
-    stroke: #df2020;
-    stroke-width: 1px;
-  }
-}
-
-// .tooltip:hover .tooltiptext {
-//   visibility: visible;
-// }
-
-// .kaduna:hover  .tooltiptext {
-//   visibility: visible;
-// }
 
 .green {
   color: #00fac9;
