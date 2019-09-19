@@ -16,45 +16,27 @@
     <link rel="stylesheet" href="assets/css/main.min.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="header__contents">
-        <img src="assets/img/Logo.svg" alt="Logo" class="header__logo" />
-        <div class="header__content">
-          <div class="header__content__text">
-            <h1 class="header__content__heading">State of states</h1>
-            <p class="header__content__sub">
-              The site is based on our continued advocacy for the optimisation
-              of Nigeria’s revenue base, towards a more inclusive society, via a
-              needed focus on the States.
-            </p>
-          </div>
-          <div class="header__content__img">
-            <img
-              src="assets/img/abstract-img.svg"
-              alt="abstract image"
-              class="header__content__pic"
-            />
-          </div>
-        </div>
-        <img
-          src="assets/img/down-arrow.svg"
-          alt="down-arrow"
-          class="header__arrow bounce"
-        />
-      </div>
-    </header>
     <main class="map">
       <div class="map__content">
+        <div class="map__info">
+          <a href="#">
+            <img src="assets/img/Logo-2.svg" alt="logo" class="map__logo">
+          </a>
+          <h1 class="map__heading">State <span class="map__sub">of</span> states</h1>
+          <p class="map__text">
+            Research to ascertain the overall fiscal position, opportunities & sustainability of Nigeria’s subnational base.
+          </p>
+        </div>
         <div class="map__buttons">
           <button onclick="openLeft()" class="btn btn__map btn__map--1">
             Sustainability ranking
-            <img src="assets/img/internet.svg" alt="loaction" />
+            <img src="assets/img/internet.svg" alt="loaction" class="btn__map__img"/>
           </button>
           <button onclick="openRight()" class="btn btn__map btn__map--2">
-            <img src="assets/img/location.svg" alt="loaction" />Select State
+            <img src="assets/img/location.svg" alt="loaction" class="btn__map__img"/>Select State
           </button>
         </div>
-
+        <img src="assets/img/legend.svg" alt="legend" class="map__legend">
         <div class="map__index scroller" id="left-panel">
           <div class="map__index__content">
             <button onclick="closeLeft()" class="btn btn__close right">
@@ -493,90 +475,6 @@
       </div>
     </main>
     <footer class="footer">
-      <div class="footer__content">
-        <div class="footer__info">
-          <p class="footer__info__text">
-            BudgIT is a civic organization that applies technology to intersect
-            citizen engagement with institutional improvement, to facilitate
-            societal change.
-          </p>
-          <div class="footer__social-medias">
-            <svg
-              width="52"
-              height="52"
-              viewBox="0 0 52 52"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="footer__social-media"
-            >
-              <circle cx="26" cy="26" r="25" stroke="white" stroke-width="2" />
-              <path
-                d="M20.3251 26.7824H22.9559V37.6129C22.9559 37.8267 23.1291 38 23.343 38H27.8036C28.0174 38 28.1907 37.8267 28.1907 37.6129V26.8334H31.215C31.4116 26.8334 31.5771 26.6859 31.5996 26.4905L32.0589 22.5033C32.0715 22.3936 32.0368 22.2838 31.9633 22.2014C31.8899 22.1191 31.7848 22.0719 31.6744 22.0719H28.1908V19.5725C28.1908 18.8191 28.5965 18.437 29.3968 18.437C29.5108 18.437 31.6744 18.437 31.6744 18.437C31.8883 18.437 32.0615 18.2637 32.0615 18.0499V14.39C32.0615 14.1761 31.8883 14.0029 31.6744 14.0029H28.5354C28.5133 14.0018 28.4641 14 28.3917 14C27.847 14 25.9539 14.1069 24.4584 15.4827C22.8015 17.0072 23.0318 18.8326 23.0869 19.1491V22.0718H20.3251C20.1112 22.0718 19.938 22.2451 19.938 22.4589V26.3953C19.938 26.609 20.1113 26.7824 20.3251 26.7824Z"
-                fill="white"
-              />
-            </svg>
-            <svg
-              width="52"
-              height="52"
-              viewBox="0 0 52 52"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="footer__social-media"
-            >
-              <circle cx="26" cy="26" r="25" stroke="white" stroke-width="2" />
-              <g clip-path="url(#clip0)">
-                <path
-                  d="M38 18.5585C37.1075 18.95 36.1565 19.2095 35.165 19.3355C36.185 18.7265 36.9635 17.7695 37.3295 16.616C36.3785 17.183 35.3285 17.5835 34.2095 17.807C33.3065 16.8455 32.0195 16.25 30.6155 16.25C27.8915 16.25 25.6985 18.461 25.6985 21.1715C25.6985 21.5615 25.7315 21.9365 25.8125 22.2935C21.722 22.094 18.1025 20.1335 15.671 17.147C15.2465 17.8835 14.9975 18.7265 14.9975 19.634C14.9975 21.338 15.875 22.8485 17.183 23.723C16.3925 23.708 15.617 23.4785 14.96 23.117C14.96 23.132 14.96 23.1515 14.96 23.171C14.96 25.562 16.6655 27.548 18.902 28.0055C18.5015 28.115 18.065 28.1675 17.612 28.1675C17.297 28.1675 16.979 28.1495 16.6805 28.0835C17.318 30.032 19.127 31.4645 21.278 31.511C19.604 32.8205 17.4785 33.6095 15.1775 33.6095C14.774 33.6095 14.387 33.5915 14 33.542C16.1795 34.9475 18.7625 35.75 21.548 35.75C30.602 35.75 35.552 28.25 35.552 21.749C35.552 21.5315 35.5445 21.3215 35.534 21.113C36.5105 20.42 37.331 19.5545 38 18.5585Z"
-                  fill="white"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0">
-                  <rect
-                    width="24"
-                    height="24"
-                    fill="white"
-                    transform="translate(14 14)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
-        </div>
-        <div class="footer__contacts">
-          <div class="footer__contact">
-            <div class="footer__contact__content">
-              <img
-                src="assets/img/Home.svg"
-                alt="Home Icon"
-                class="footer__contact__icon"
-              />
-              <p class="footer__contact__text">
-                BudgIT 55 Moleye Street, Alagomeji, Lagos
-              </p>
-            </div>
-            <div class="footer__contact__content">
-              <img
-                src="assets/img/Phone.svg"
-                alt="Phone Icon"
-                class="footer__contact__icon"
-              />
-              <p class="footer__contact__text">
-                +2349083331633, +2348037276668 , +2347034944492
-              </p>
-            </div>
-            <div class="footer__contact__content">
-              <img
-                src="assets/img/Message.svg"
-                alt="Message Icon"
-                class="footer__contact__icon"
-              />
-              <p class="footer__contact__text">info@yourbudgit.com</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="footer__line"></div>
       <div class="footer__copyright">
         <p class="footer__copyright__text">

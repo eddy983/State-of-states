@@ -125,13 +125,18 @@
       @content;
     } // 1440px in em
   }
+  @if $breakpoint == desktop-min {
+    @media (min-width: 90em) {
+      @content;
+    } // 1440px in em
+  }
   @if $breakpoint == big-desktop2 {
     @media (max-width: 138.5625em) {
       @content;
     } // 2217px in em
   }
   @if $breakpoint == big-desktop {
-    @media (max-width: 160em) {
+    @media (min-width: 160em) {
       @content;
     } // 2560px in em
   }
@@ -325,6 +330,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @include respond(tab-port3) {
+      top: 58%;
+    }
   }
 
   &__items {
@@ -335,13 +344,100 @@ body {
     // }
   }
 
+  &__info {
+    position: absolute;
+    top: 2.4rem;
+    left: 2rem;
+  }
+
+  &__logo {
+    transition: all 0.2s;
+    &:hover {
+      transform: scale(1.3);
+    }
+
+    @include respond(big-desktop) {
+      height: 5.8rem;
+    }
+
+    @include respond(tab-land2) {
+      height: 4.4rem;
+    }
+  }
+
+  &__heading {
+    font-weight: normal;
+    font-size: 2.6rem;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+
+    @include respond(big-desktop) {
+      font-size: 4.6rem;
+    }
+
+    @include respond(tab-land2) {
+      font-size: 3.6rem;
+    }
+  }
+
+  &__sub {
+    font-size: 2rem;
+
+    @include respond(big-desktop) {
+      font-size: 4rem;
+    }
+
+    @include respond(tab-land2) {
+      font-size: 3rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.2rem;
+    letter-spacing: 0.02em;
+    width: 49%;
+
+    @include respond(big-desktop) {
+      font-size: 2.2rem;
+    }
+
+    @include respond(tab-land2) {
+      font-size: 2rem;
+    }
+
+    @include respond(tab-port3) {
+      display: none;
+    }
+  }
+
   &__buttons {
     display: flex;
     width: 100%;
     justify-content: space-between;
     position: absolute;
-    top: 20%;
+    top: 50%;
     left: 0;
+    z-index: 2;
+
+    @include respond(tab-land2) {
+      top: 22%;
+    }
+  }
+
+  &__legend {
+    position: absolute;
+    bottom: 2.4rem;
+    left: 2rem;
+
+    @include respond(big-desktop) {
+      height: 6%;
+      width: 20%;
+    }
+
+    @include respond(tab-port3) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__index {
@@ -353,7 +449,7 @@ body {
     overflow-y: scroll;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 3;
     transition: all 0.4s ease-out;
 
     &__content {
@@ -402,7 +498,7 @@ body {
     overflow-y: scroll;
     top: 0;
     right: 0;
-    z-index: 1;
+    z-index: 3;
     transition: all 0.4s ease-out;
 
     @include respond(l-phone) {
@@ -493,18 +589,36 @@ body {
     border: 1px solid $color-green;
     background: $color-white;
 
+    @include respond(big-desktop) {
+      font-size: 2rem;
+    }
+
     @include respond(tab-port3) {
       line-height: 1.7;
     }
 
+    &__img {
+      @include respond(big-desktop) {
+        height: 2.4rem;
+      }
+    }
+
     &--1 {
-      width: 19%;
+      width: 18%;
       border-radius: 0 8px 8px 0;
       transition: all 0.2s;
 
       &:hover {
         transform: scaleX(1.03) translateX(1.5%);
         cursor: pointer;
+      }
+
+      @include respond(big-desktop) {
+        width: 13%;
+      }
+
+      @include respond(desktop-min) {
+        width: 16%;
       }
 
       @include respond(tab-land2) {
@@ -524,6 +638,14 @@ body {
       &:hover {
         transform: scaleX(1.03) translateX(-1.5%);
         cursor: pointer;
+      }
+
+      @include respond(big-desktop) {
+        width: 8%;
+      }
+
+      @include respond(desktop-min) {
+        width: 10%;
       }
 
       @include respond(tab-land2) {
@@ -641,7 +763,7 @@ body {
   }
 
   &__copyright {
-    padding: 2.5rem 0;
+    padding: 1.5rem 0;
 
     &__text {
       text-align: center;
