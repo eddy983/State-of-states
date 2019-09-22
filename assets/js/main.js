@@ -11,7 +11,7 @@ countries.forEach(element => {
         tooltip.innerHTML = (e.target.id).toUpperCase();
         state_rank_span.innerHTML = filter_rank(e.target.id);
 
-        tooltipModal.style.top = `${e.clientY + e.offsetY - e.clientY}px`; // `${e.screenY}`;
+        tooltipModal.style.top = `${e.clientY - 40}px`; // `${e.screenY}`;
         tooltipModal.style.left = `${e.clientX - 30}px`;
     });
 
