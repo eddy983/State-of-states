@@ -346,11 +346,13 @@ body {
 
   &__info {
     position: absolute;
-    top: 2.4rem;
+    top: 1rem;
     left: 2rem;
   }
 
   &__logo {
+    height: 2rem;
+    margin-bottom: -16px;
     transition: all 0.2s ease-in-out;
     &:hover {
       transform: scale(1.3);
@@ -370,6 +372,7 @@ body {
     font-size: 2.6rem;
     letter-spacing: -0.01em;
     text-transform: uppercase;
+
 
     @include respond(big-desktop) {
       font-size: 4.6rem;
@@ -427,7 +430,7 @@ body {
   &__legend {
     position: absolute;
     bottom: 2.4rem;
-    left: 2rem;
+    right: 2rem;
 
     @include respond(big-desktop) {
       height: 6%;
@@ -577,6 +580,8 @@ body {
 
 .btn {
   outline: 0;
+  font-family: "Poppins", sans-serif;
+  
 
   &__map {
     font-size: 1.4rem;
@@ -588,6 +593,7 @@ body {
     justify-content: space-between;
     border: 1px solid $color-green;
     background: $color-white;
+    text-transform: uppercase;
 
     @include respond(big-desktop) {
       font-size: 2rem;
@@ -604,7 +610,7 @@ body {
     }
 
     &--1 {
-      width: 18%;
+      width: 17%;
       border-radius: 0 8px 8px 0;
       transition: all 0.2s ease-in-out;
 
@@ -631,7 +637,7 @@ body {
     }
 
     &--2 {
-      width: 12%;
+      width: 9%;
       border-radius: 8px 0 0 8px;
       transition: all 0.2s ease-in-out;
 
@@ -832,29 +838,34 @@ td {
 
   &__heading {
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.2rem;
+    text-align: left;
+    color: #BDBDBD;
   }
 
   &__sub {
     font-weight: 500;
     font-size: 1.4rem;
+    text-align: left;
+    line-height: 1;
+    color: #BDBDBD;
   }
 }
 
 .tooltip .tooltiptext {
   // visibility: hidden;
   visibility: visible;
-  width: 180px;
+  width: 84px;
   background-color: black;
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 16px 0;
+  padding: 11px 16px;
   position: absolute;
   z-index: 1;
   bottom: 150%;
   left: 50%;
-  margin-left: -60px;
+  margin-left: -30px;
 }
 
 .tooltip .tooltiptext::after {
@@ -908,8 +919,9 @@ td {
   }
 }
 
-.green {
-  color: #00fac9;
+.main {
+  color: #fff;
+  font-size: 5.5rem;
 }
 
 .width {
