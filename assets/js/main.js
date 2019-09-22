@@ -2,6 +2,7 @@ countries = Array.from(document.getElementsByClassName("map__items"));
 tooltip = document.getElementById("tool_tip");
 tooltipModal = document.getElementById("tool_tip_modal");
 tooltipText = document.getElementsByClassName("tooltiptext");
+stateRank = document.getElementById("state_rank");
 state_rank_span = document.getElementById("state_rank");
 
 tooltipModal.style.display = "none";
@@ -16,8 +17,8 @@ countries.forEach(element => {
 
         tooltipModal.style.top = `${e.clientY - 40}px`;
         tooltipModal.style.left = `${e.clientX - 30}px`;
-        xyz = getColor(e);
-        tooltipText[0].style.color = getColor(e);
+        stateRank.style.color = getColor(e);
+        // tooltipText[0].style.color = getColor(e);
         
     });
 
@@ -27,7 +28,7 @@ countries.forEach(element => {
 });
 
 var getColor = (e)=>{
-    var theCSSprop = window.getComputedStyle(e.srcElement, null).getPropertyValue("stroke");
+    var theCSSprop = window.getComputedStyle(e.srcElement, null).getPropertyValue("fill");
     return theCSSprop;
 };
 
