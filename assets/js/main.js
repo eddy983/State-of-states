@@ -1,24 +1,35 @@
 countries = Array.from(document.getElementsByClassName("map__items"));
 tooltip = document.getElementById("tool_tip");
 tooltipModal = document.getElementById("tool_tip_modal");
+tooltipText = document.getElementsByClassName("tooltiptext");
 state_rank_span = document.getElementById("state_rank");
+
 tooltipModal.style.display = "none";
 
 countries.forEach(element => {
     element.addEventListener("mousemove", (e)=>{
+
         tooltipModal.style.display = "";
 
         tooltip.innerHTML = (e.target.id).toUpperCase();
         state_rank_span.innerHTML = filter_rank(e.target.id);
 
-        tooltipModal.style.top = `${e.clientY + e.offsetY - e.clientY}px`; // `${e.screenY}`;
+        tooltipModal.style.top = `${e.clientY - 40}px`;
         tooltipModal.style.left = `${e.clientX - 30}px`;
+        xyz = getColor(e);
+        tooltipText[0].style.color = getColor(e);
+        
     });
 
     element.addEventListener("mouseleave", (e)=>{
         tooltipModal.style.display = "none";
     })
 });
+
+var getColor = (e)=>{
+    var theCSSprop = window.getComputedStyle(e.srcElement, null).getPropertyValue("stroke");
+    return theCSSprop;
+};
 
 var filter_rank = (state_name)=>{
     target_state_ranking = 0
